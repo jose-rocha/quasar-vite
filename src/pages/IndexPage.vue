@@ -1,5 +1,8 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex column">
+    <div class="flex justify-end">
+        <MenuSettings/>
+    </div>
     <div class="flex column">
       <h1>{{user.nameUser}}</h1>
       <h1>{{user.sobrenome}}</h1>
@@ -15,6 +18,7 @@
 
 <script setup>
 import { useStoreUser } from 'src/stores/userData';
+import MenuSettings from 'src/components/MenuSettings.vue';
 
 const store = useStoreUser();
 const user = store.$state;

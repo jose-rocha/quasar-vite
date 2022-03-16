@@ -16,7 +16,7 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>seus score é: {{user.counter}}, Bem vindo: {{user.nameFull}}</div>
+        <!-- <div><MenuUser/></div> -->
       </q-toolbar>
     </q-header>
 
@@ -53,11 +53,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useStoreUser } from 'src/stores/userData';
+// import MenuUser from 'src/components/MenuUser.vue';
 
 const leftDrawerOpen = ref(false);
-const store = useStoreUser();
-const user = store.$state;
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };

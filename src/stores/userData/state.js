@@ -1,7 +1,8 @@
 const state = () => ({
-  nameUser: 'Olávio',
-  sobrenome: 'Macena',
-  nameFull: 'Olávio Macena',
+  nameUser: 'José',
+  sobrenome: 'Rocha',
+  nameFull: 'José Rocha',
+  email: 'joserocha@outlook.com',
   counter: 0,
 });
 

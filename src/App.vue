@@ -2,10 +2,17 @@
   <router-view />
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script setup>
+import { onMounted } from 'vue';
+import { useQuasar } from 'quasar';
 
-export default defineComponent({
-  name: 'App',
+const $q = useQuasar();
+
+onMounted(() => {
+  const darkModeIsActive = $q.localStorage.getItem('darkMode');
+  if (darkModeIsActive) {
+    $q.dark.set(true);
+  }
 });
+
 </script>
