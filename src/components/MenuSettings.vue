@@ -6,13 +6,14 @@
         <div class="row no-wrap q-pa-md">
           <div class="column">
             <div class="text-h6 q-mb-md">Settings</div>
-            <q-toggle v-model="mobileData" label="Use Mobile Data" />
-            <q-toggle v-model="darkMode"
-            :label="darkMode === true ? 'Dark' : 'Light'"
-            checked-icon='mdi-moon-waxing-crescent'
-            unchecked-icon="mdi-white-balance-sunny"
+            <q-toggle
+              v-model="darkMode"
+              :label="darkMode === true ? 'Dark' : 'Light'"
+              checked-icon='mdi-moon-waxing-crescent'
+              unchecked-icon="mdi-white-balance-sunny"
              />
-            <span>{{user.email}}</span>
+             <span>hora: {{times}} </span>
+             <span>{{user.email}}</span>
           </div>
 
           <q-separator vertical inset class="q-mx-lg" />
@@ -39,15 +40,26 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import {
+  ref, watch, onMounted, computed,
+} from 'vue';
 import { useQuasar } from 'quasar';
 import { useStoreUser } from 'src/stores/userData';
 
 const store = useStoreUser();
 const user = store.$state;
-const mobileData = ref(true);
 const darkMode = ref(false);
 const $q = useQuasar();
+const date = ref(new Date());
+const times = computed(
+  () => `${date.value.getHours().toString().padStart(2, '0')}:
+  ${date.value.getMinutes().toString().padStart(2, '0')}:
+  ${date.value.getSeconds().toString().padStart(2, '0')}`,
+);
+
+setInterval(() => {
+  date.value = new Date();
+}, 1000);
 
 // watch(darkMode, (dark) => console.log('darkMode', dark));
 watch(darkMode, (darkSet) => {

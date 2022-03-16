@@ -9,7 +9,6 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
-          v-if="$q.screen.gt.xs"
         />
 
         <q-toolbar-title>
@@ -31,7 +30,7 @@
         >
           Essential Links
         </q-item-label>
-        <div>
+        <div v-if="$q.screen.gt.xs">
           <q-tabs
               v-model="setTabs.tabSelected"
               dense

@@ -9,7 +9,6 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
-          v-if="$q.screen.gt.xs"
         />
 
         <q-toolbar-title>
