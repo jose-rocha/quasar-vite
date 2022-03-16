@@ -22,14 +22,24 @@
     <q-drawer
       v-model="leftDrawerOpen"
       bordered
-      show-if-above
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
+        <q-item-label header class="flex  justify-center" >
+          <div class="flex" style="height: 30px;">
+          <!-- <q-card class="full-width flex justify-center items-start"> -->
+          <router-link
+            :to="{name: 'home'}"
+            style="text-decoration:none; font-weight: bold;
+            font-size: 20px;"
+            class="text-green q-mr-sm"
+          >
+          <q-icon name="mdi-home" size="2em" style="margin-right: 20px;" />
+            Ir para Home
+          </router-link>
+          <!-- </q-card> -->
+        </div>
         </q-item-label>
+
         <div v-if="$q.screen.gt.xs">
           <q-tabs
               v-model="setTabs.tabSelected"
@@ -72,17 +82,7 @@
 
             </q-tabs>
         </div>
-        <div class="flex" style="height: 30px;">
-          <q-card class="full-width flex justify-center items-start">
-          <router-link
-            :to="{name: 'home'}"
-            style="text-decoration:none; font-weight: bold; font-size: 20px;"
-          >
-          <q-icon name="mdi-home" size="1.5em" style="margin-right: 20px;" />
-          Ir para Home
-          </router-link>
-          </q-card>
-        </div>
+
       </q-list>
     </q-drawer>
 

@@ -24,22 +24,23 @@
       bordered
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-        <div class="flex" style="height: 30px;">
-          <q-card class="full-width flex justify-center items-center">
+        <q-item-label header >
+          <q-item-label header class="flex  justify-center" >
+          <div class="flex" style="height: 30px;">
+          <!-- <q-card class="full-width flex justify-center items-start"> -->
           <router-link
             :to="{name: 'tabs'}"
-            style="text-decoration:none; font-weight: bold; font-size: 20px;"
+            style="text-decoration:none; font-weight: bold;
+            font-size: 20px;"
+            class="text-green q-mr-sm"
           >
-          <q-icon name="mdi-arrow-collapse-right" size="1.5em" />
-          Ir para Tabs
+          <q-icon name="mdi-tablet-dashboard" size="2em" style="margin-right: 20px;" />
+            Ir para Tabs
           </router-link>
-          </q-card>
+          <!-- </q-card> -->
         </div>
+        </q-item-label>
+        </q-item-label>
 
       </q-list>
     </q-drawer>
